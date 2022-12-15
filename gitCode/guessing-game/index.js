@@ -3,66 +3,60 @@
 guess. 
 - Store this random number as a variable: something like winningNumber
 */
-let winNum = Math.floor((100 * Math.random()) + 1);
-console.log(winNum);
+let winNum = Math.floor(100 * Math.random() + 1);
 
-/*
-User querySelectorAll to return a node list (array) 
-of guesses. Loop through this array and push in the 
-user guesses
-*/
-let arr = document.querySelectorAll('#guess');
+const usrGuess = document.querySelector("#numIn");
 
-console.log(arr)
+//initialize array and reminaing number of attempts
+let attemptsArr = [];
+let maxGuess = 5;
+let guessRemain = maxGuess - attemptsArr.length;
 
-//user number prompt
-const usrGuess = document.querySelector("#numIN");
-const guessButton = document.querySelector("#guessBtn");
-guessArr = []
-let guessRemain = 5
-lowGuess = `Incorrect. You have ${guessRemain} remaining. The winning number is higher`
-highGuess = `Incorrect. You have ${guessRemain} remaining. The winning number is lower`
+// messages displayed when theguess is low or high
+lowGuess = `Incorrect. You have ${guessRemain} remaining. The winning number is higher`;
+highGuess = `Incorrect. You have ${guessRemain} remaining. The winning number is lower`;
+
 function guessNum(usrGuess, winNum) {
+  //check if user's guess is valid
   if (0 >= usrGuess || usrGuess > 100) {
-    return "Answer needs to be between 1-100"
-  }
-  while (guessRemain > 0) {
-    if (usrGuess === winNum) {
-      return "YOU WIN!";
-    } else {
-        guessRemain--;
-        if (usrGuess > winNum) {
-        return highGuess;
-        } else {
-        return lowGuess;
-        
-      }
+    return "Answer needs to be between 1-100";
+  } //check if user's guess is correct
+  if (usrGuess === winNum) {
+    return "YOU WIN!";
+  } //check if user has remaining attempts
+  if (guessRemain > 0) {
+    let attempts = document.querySelectorAll(".attempts");
+    let chance = document.querySelectorAll(".guess");
+
+    //loop through attempts
+    for (let i = 0; i < attemptsArr.length; i++) {
+      chance[i].textContent = attempts[i];
     }
-  } return `YOU LOSE! The winning number was ${winNum}.`;
+    //add to list of attempts and subtract from remaining attempts
+    console.log(attemptsArr.push(usrGuess))
+    guessRemain--;
+    console.log(guessRemain, attemptsArr)
+    if (usrGuess > winNum) {
+      return highGuess;
+    } else {
+      return lowGuess;
+    
+    }
+  }
+  console.log(guessRemain, attemptsArr);
+  //return once user runs out of attempts they have lost
+  return `YOU LOSE! The winning number was ${winNum}.`;
 }
 
 //Button functionality
+const guessButton = document.querySelector("#guessBtn");
+guessButton.addEventListener("click", () => {
+  const userGV = usrGuess.value;
+  const result = guessNum(userGV, winNum);
+  console.log(result);
+  //Use function written to compare guessing with winNum
+});
 
-guessButton.addEventListener('click', () => {
-    const userGV = usrGuess.value;
-    const result = guessNum(userGV, winNum);
-    console.log(result);
-  //Use function written to compare guessing with winNum 
-})
-console.log(guessNum(8, 10));
-console.log(guessNum(-3, 10));
-console.log(guessNum(-1, 101));
-console.log(guessNum(101, 10));
-console.log(guessNum(-3, -3));
-console.log(guessNum(-1, 0));
-console.log(guessNum(101, 101));
-console.log(guessNum(0, 0));
-
-console.log(guessNum(3, 3));
-console.log(guessNum(1, 1));
-console.log(guessNum(100, 100));
-console.log(guessNum(99, 99));
-console.log(guessNum(50, 50));
 /*
 Users guesses (Maybe use an array with the length of 5 to store the
 guesses)
@@ -72,7 +66,7 @@ guesses)
 let resetButton = document.querySelector("#resetButton");
 
 // resetButton.addEventListener("click", () => {
-  /*
+/*
   Have this function return the user to the main html page
   (refresh the page)
   */

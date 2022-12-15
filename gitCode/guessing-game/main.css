@@ -28,7 +28,7 @@ body {
     
 }
 
-.guesses {
+.attempts {
     position: relative;
     display:flex;
     justify-content: center;
@@ -36,7 +36,7 @@ body {
     width: 100%;
 }
 
-.guesses div {
+.guess {
     height: 100px;
     width: 100px;
     margin: 10px;
@@ -56,5 +56,5 @@ footer {
     position: fixed;
     bottom: 0;
     display: flex;
-    justify-content: flex-end
+    justify-content: center;
 }
