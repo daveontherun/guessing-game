@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    background-image: url("assets/images/question.jpg");
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+
+#numIn {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    background-color: whitesmoke;
+    border: solid white 2px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+#guessBtn {
+    height: 25px;
+    border: solid white 2px;
+    border-radius: 30px;
+    margin: 10px;
+    
+}
+
+.guesses {
+    position: relative;
+    display:flex;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+}
+
+.guesses div {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    border-radius: 50px;
+    background-color: whitesmoke;
+}
+
+#logo {
+    position: relative;
+    margin: 10px;
+
+}
+
+footer {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end
+}
