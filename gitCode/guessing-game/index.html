@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="main.css"/>
+</head>
+<body>
+    <div class="main">
+        <h1>The Guessing Game</h1>
+        <input id="numIn" type="number">
+        <button id="guessBtn">Guess</button>
+    </div>
+  <!-- Title  -->
+    <!--
+    -if not a number return error
+    -else if not winning # convert title to hint
+    -else after 5 attempts return you lost -->
+
+<!-- Input prompt for number only between 1-100 -->
+
+<!-- Guess row  for 5 attmpts 
+    - Display will be flexed to allow us to 
+    manipulate the child elements (boxes)
+-->
+
+    <div class="attemptRow"> 
+        <!-- Make 5 boxes that will hold guesses -->
+        <ul>
+            <li class="attemptCol"></li>
+            <li class="attemptCol"></li>
+            <li class="attemptCol"></li>
+            <li class="attemptCol"></li>
+            <li class="attemptCol"></li>
+        </ul>
+    </div>
+    <footer>
+        <img id="logo" src="assets/images/fsa_logo.png" alt="Fullstack Academy Logo">
+    </footer>
+<!-- Reset and hint buttons -->
+
+<!-- Store number of wins/losses streak (think wordle) -->
+
+<script src="index.js"></script>
+</body>
+</html>
