@@ -11,7 +11,7 @@ User querySelectorAll to return a node list (array)
 of guesses. Loop through this array and push in the 
 user guesses
 */
-let arr = document.querySelectorAll('#guess');
+// let arr = document.querySelectorAll('#guess');
 
 console.log(arr)
 
@@ -77,3 +77,61 @@ let resetButton = document.querySelector("#resetButton");
   (refresh the page)
   */
 // })
+
+/*
+guessButton.addEventListener('click', () => {
+    let guess = Number(userInput.value);
+    let arrOfGuesses = document.querySelectorAll('.guess');
+
+    if (guess < 1 || guess > 100) {
+        document.querySelector('#title').innerHTML = "You must choose a number between 1 and 100!";
+    }
+    else if (guessCounter === 5) {
+        if (guess === winNum) {
+            document.querySelector('#title').innerHTML = `Wow, you got lucky! The answer was ${winNum}`
+        }
+        else {
+            document.querySelector('#title').innerHTML = `You have no more guesses! The answer was ${winNum}`
+        }
+    }
+    else if (winner === true) {
+        document.querySelector('#title').innerHTML = "You already won! Go touch some grass!";
+    }
+    else {
+        while (guessCounter < 5) {
+            guessCounter += 1;
+            if (guess === winNum) {
+                document.querySelector('#title').innerHTML = "You guessed the right number!";
+                winner = true;
+                for (let i = 0; i < arrOfGuesses.length; i++) {
+                    if (arrOfGuesses[i].innerHTML === '') {
+                        arrOfGuesses[i].innerHTML = guess;
+                        break;
+                    }
+                }
+                break;
+            }
+            else if (guess > winNum) {
+                document.querySelector('#title').innerHTML = "You guessed too high! Guess a lower number!"
+                for (let i = 0; i < arrOfGuesses.length; i++) {
+                    if (arrOfGuesses[i].innerHTML === '') {
+                        arrOfGuesses[i].innerHTML = guess;
+                        break;
+                    }
+                }
+                break;
+            }
+            else {
+                document.querySelector('#title').innerHTML = "You guessed too low! Guess a higher number!"
+                for (let i = 0; i < arrOfGuesses.length; i++) {
+                    if (arrOfGuesses[i].innerHTML === '') {
+                        arrOfGuesses[i].innerHTML = guess;
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+    }
+})
+/*
