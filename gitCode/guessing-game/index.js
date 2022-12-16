@@ -78,7 +78,9 @@ let resetButton = document.querySelector("#resetButton");
   */
 // })
 
-/*
+/* 
+COPY OF CODE I WROTE TANGENTIALLY FOR THE GUESSING GAME ACTIVITY
+Just a different way to skin a cat if you wanted to give it a look. 
 guessButton.addEventListener('click', () => {
     let guess = Number(userInput.value);
     let arrOfGuesses = document.querySelectorAll('.guess');

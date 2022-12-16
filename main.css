@@ -28,15 +28,16 @@ body {
     
 }
 
-.guesses {
+.attemptRow {
     position: relative;
     display:flex;
+    list-style: none;
     justify-content: center;
     height: 100px;
     width: 100%;
 }
 
-.guesses div {
+.attemptCol {
     height: 100px;
     width: 100px;
     margin: 10px;
@@ -56,5 +57,5 @@ footer {
     position: fixed;
     bottom: 0;
     display: flex;
-    justify-content: flex-end
+    justify-content: center;
 }
