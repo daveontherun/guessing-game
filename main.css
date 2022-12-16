@@ -28,15 +28,16 @@ body {
     
 }
 
-.attempts {
+.attemptRow {
     position: relative;
     display:flex;
+    list-style: none;
     justify-content: center;
     height: 100px;
     width: 100%;
 }
 
-.guess {
+.attemptCol {
     height: 100px;
     width: 100px;
     margin: 10px;

@@ -5,26 +5,30 @@ guess.
 */
 let winNum = Math.floor(100 * Math.random() + 1);
 
-const usrGuess = document.querySelector("#numIn");
+const usrNum = document.querySelector("#numIn");
 
 //initialize array and reminaing number of attempts
 let attemptsArr = [];
-let maxGuess = 5;
-let guessRemain = maxGuess - attemptsArr.length;
+let maxAtt = 5;
+let attRemain
+ = maxAtt - attemptsArr.length;
 
 // messages displayed when theguess is low or high
-lowGuess = `Incorrect. You have ${guessRemain} remaining. The winning number is higher`;
-highGuess = `Incorrect. You have ${guessRemain} remaining. The winning number is lower`;
+low = `Incorrect. You have ${attRemain
+} remaining. The winning number is higher`;
+high = `Incorrect. You have ${attRemain
+} remaining. The winning number is lower`;
 
-function guessNum(usrGuess, winNum) {
+function guessNum(usrNum, winNum) {
   //check if user's guess is valid
-  if (0 >= usrGuess || usrGuess > 100) {
+  if (0 >= usrNum || usrNum > 100) {
     return "Answer needs to be between 1-100";
   } //check if user's guess is correct
-  if (usrGuess === winNum) {
+  if (usrNum === winNum) {
     return "YOU WIN!";
   } //check if user has remaining attempts
-  if (guessRemain > 0) {
+  if (attRemain
+     > 0) {
     let attempts = document.querySelectorAll(".attempts");
     let chance = document.querySelectorAll(".guess");
 
@@ -33,17 +37,19 @@ function guessNum(usrGuess, winNum) {
       chance[i].textContent = attempts[i];
     }
     //add to list of attempts and subtract from remaining attempts
-    console.log(attemptsArr.push(usrGuess))
-    guessRemain--;
-    console.log(guessRemain, attemptsArr)
-    if (usrGuess > winNum) {
-      return highGuess;
+    console.log(attemptsArr.push(usrNum))
+    attRemain--;
+    console.log(attRemain
+      , attemptsArr)
+    if (usrNum > winNum) {
+      return high;
     } else {
-      return lowGuess;
+      return low;
     
     }
   }
-  console.log(guessRemain, attemptsArr);
+  console.log(attRemain
+    , attemptsArr);
   //return once user runs out of attempts they have lost
   return `YOU LOSE! The winning number was ${winNum}.`;
 }
@@ -51,7 +57,7 @@ function guessNum(usrGuess, winNum) {
 //Button functionality
 const guessButton = document.querySelector("#guessBtn");
 guessButton.addEventListener("click", () => {
-  const userGV = usrGuess.value;
+  const userGV = usrNum.value;
   const result = guessNum(userGV, winNum);
   console.log(result);
   //Use function written to compare guessing with winNum
